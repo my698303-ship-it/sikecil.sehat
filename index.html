@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiKecil Sehat</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <div class="sb"><span>09:41</span><svg viewBox="0 0 62 14" fill="currentColor"><rect x="0" y="9" width="3" height="4" rx=".7"/><rect x="5" y="6" width="3" height="7" rx=".7"/><rect x="10" y="3" width="3" height="10" rx=".7"/><rect x="15" y="0" width="3" height="13" rx=".7"/><path d="M27 4a9 9 0 0113 0l-1.5 1.5a7 7 0 00-10 0zM30 7.5a5 5 0 017 0L35.5 9a3 3 0 00-4 0zM33.5 11l1.2-1.2L35.9 11l-1.2 1.4z"/><rect x="48" y="2" width="11" height="9" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="50" y="4" width="7" height="5" rx="1"/><rect x="60" y="5" width="1.5" height="3" rx=".5"/></svg></div>
+
+  <!-- 1 LOGIN -->
+  <section class="screen on" id="login">
+    <div class="top">
+      <div class="logo" data-i="baby"></div>
+      <h1>SiKecil Sehat</h1>
+      <p class="sub">Pemantauan Kesehatan &amp; Deteksi Dini Tanda Bahaya Anak</p>
+    </div>
+    <div class="card">
+      <div class="tab">MASUK AKUN IBU</div>
+      <div class="fl"><label for="em">Email / Nomor HP</label><div class="inp"><span data-i="mail"></span><input id="em" type="text" autocomplete="username"></div></div>
+      <div class="fl"><label for="pw">Kata Sandi</label><div class="inp"><span data-i="lock"></span><input id="pw" type="password" autocomplete="current-password"></div></div>
+      <div class="forgot">Lupa Kata Sandi?</div>
+      <button class="btn" data-go="home">Masuk</button>
+      <div class="dv"><i></i>atau<i></i></div>
+      <div class="reg">Belum punya akun? <button>Daftar Sekarang</button></div>
+    </div>
+  </section>
+
+  <!-- 2 HOME -->
+  <section class="screen pb" id="home">
+    <div class="hhead">
+      <div class="who"><div class="av">IR</div><div><small>Selamat datang,</small><b>Ibu Rahma 👋</b></div></div>
+      <button class="bell" aria-label="Notifikasi"><span data-i="bell"></span><i></i></button>
+      <div class="kid">
+        <div class="r1"><span class="pill">PROFIL ANAK AKTIF</span><button class="add">+&nbsp; Tambah Anak</button></div>
+        <div class="r2"><div class="ph">Anak</div><div><h3>Aisyah Putri</h3><p>2 Tahun 4 Bulan •<br>Perempuan</p></div><div class="sel">Aisyah <span data-i="chev-down"></span></div></div>
+      </div>
+    </div>
+    <button class="feat" data-go="input">
+      <div class="ic" data-i="heart-pulse"></div>
+      <div class="t"><span class="tag">FITUR UTAMA</span><h2>Cek Gejala &amp; Keluhan</h2><p>Analisis cepat Decision Tree &amp; Tanda Bahaya</p></div>
+      <div class="st" data-i="steth"></div>
+    </button>
+    <div class="grid">
+      <button class="gc" data-go="history"><div class="ib" style="background:#eff6ff;color:#3b82f6" data-i="history"></div><b>Riwayat Keluhan</b><span>Catatan analisis lalu</span></button>
+      <button class="gc" data-go="edu"><div class="ib" style="background:#faf4ff;color:#a855f7" data-i="book"></div><b>Edukasi Anak</b><span>Artikel &amp; Pertolongan</span></button>
+      <button class="gc" data-go="edu"><div class="ib" style="background:#fff0f3;color:#f43f6e" data-i="hospital"></div><b>Faskes Terdekat</b><span>IGD &amp; Klinik 24 Jam</span></button>
+      <button class="gc red" data-go="emg"><div class="ib" style="background:#f74048;color:#fff" data-i="alert"></div><b>Tanda Bahaya</b><span>Panduan Darurat</span></button>
+    </div>
+  </section>
+
+  <!-- 3 INPUT -->
+  <section class="screen pb" id="input">
+    <div class="hd"><button class="back" data-go="home" aria-label="Kembali" data-i="chev-left"></button><b>Input Gejala Anak</b></div>
+    <div style="height:32px"></div>
+    <div class="sec"><h4>1. Pasien Anak</h4><div class="pt"><div class="u" data-i="user"></div><div><b>Aisyah Putri</b><small>2 Tahun 4 Bulan</small></div><span class="ak">Aktif</span></div></div>
+    <div class="sec">
+      <h4>2. Suhu Tubuh &amp; Durasi Keluhan</h4>
+      <div class="row"><span>Suhu Tubuh (°C):</span><span class="tv" id="tv">38.2°C</span></div>
+      <input type="range" id="rg" min="35" max="41" step="0.1" value="38.2" aria-label="Suhu tubuh">
+      <div class="sc"><span>35°C Normal</span><span>38°C Demam</span><span>40°C Tinggi</span></div>
+      <hr>
+      <div class="row">Lama Keluhan (Hari):</div>
+      <div class="chips" id="chips"><button class="on">1 Hari</button><button>2 Hari</button><button>3 Hari</button><button>&gt; 3 Hari</button></div>
+    </div>
+    <div class="sec">
+      <h4>3. Gejala yang Dialami</h4>
+      <div class="cg" id="cg">
+        <button class="ck on"><i data-i="check"></i>Batuk</button>
+        <button class="ck"><i data-i="check"></i>Pilek / Flu</button>
+        <button class="ck on"><i data-i="check"></i>Demam</button>
+        <button class="ck"><i data-i="check"></i>Muntah</button>
+      </div>
+      <button class="btn go" id="analyze">Analisis Sekarang</button>
+    </div>
+  </section>
+
+  <!-- 4 EMERGENCY -->
+  <section class="screen" id="emg">
+    <button class="back" data-go="home" aria-label="Kembali" data-i="chev-left"></button>
+    <div class="med" data-i="warn-big"></div>
+    <span class="lab">PERINGATAN DARURAT</span>
+    <h1>TANDA BAHAYA<br>TERDETEKSI!</h1>
+    <p class="d">Sistem mendeteksi setidaknya satu gejala tergolong kondisi darurat medis pada anak.</p>
+    <div class="wc">
+      <div class="fa"><span data-i="firstaid"></span><div><b>Instruksi Pertolongan Pertama:</b><span>Segera bawa anak ke <strong>IGD Rumah Sakit atau Puskesmas Terdekat</strong>. Jangan menunda pemeriksaan medis darurat.</span></div></div>
+      <button class="call" id="call"><span data-i="phone"></span>PANGGIL AMBULANS / DARURAT (119)</button>
+      <button class="fac" data-go="edu"><span data-i="map"></span>CARI IGD &amp; FASKES TERDEKAT</button>
+    </div>
+    <button class="lnk" data-go="result">Lihat Rincian Analisis Non-Darurat</button>
+  </section>
+
+  <!-- 5 RESULT -->
+  <section class="screen pb lato" id="result">
+    <div class="hd"><button class="back" data-go="input" aria-label="Kembali" data-i="chev-left"></button><b>Hasil Analisis Awal</b></div>
+    <div class="diag">
+      <div class="strip"></div>
+      <div class="bdg"><span data-i="warn-sm"></span>KATEGORI KUNING: WASPADA</div>
+      <h2>Kemungkinan ISPA Ringan / Demam</h2>
+      <p id="rsub">Berdasarkan klasifikasi model Decision Tree untuk Aisyah Putri (38.2°C, Keluhan 1 Hari)</p>
+    </div>
+    <div class="adv">
+      <h3><span data-i="care"></span>SARAN TINDAK LANJUT &amp; PERTOLONGAN MANDIRI</h3>
+      <ul>
+        <li><span data-i="ok"></span><div><b>Hidrasi Cukup:</b> Berikan ASI / air putih hangat secara berkala.</div></li>
+        <li><span data-i="ok"></span><div><b>Penurun Demam:</b> Berikan Parasetamol sesuai dosis berat badan jika suhu &gt; 38.5°C.</div></li>
+        <li><span data-i="ok"></span><div><b>Istirahat Cukup:</b> Pantau suhu tubuh setiap 4 jam.</div></li>
+      </ul>
+    </div>
+    <div class="note"><span data-i="info"></span><div>Hasil ini adalah skrining awal dari algoritma Decision Tree. Konsultasikan dengan Dokter Spesialis Anak jika gejala berlanjut &gt; 3 hari.</div></div>
+  </section>
+
+  <!-- 6 HISTORY -->
+  <section class="screen pb lato" id="history">
+    <div class="hd"><button class="back" data-go="home" aria-label="Kembali" data-i="chev-left"></button><b>Riwayat Keluhan &amp; Hasil</b></div>
+    <div class="hc"><div class="t"><time>2 nov 2026</time><span style="background:#fff3c4;color:#a34b0b">Waspada</span></div><h3>Aisyah Putri</h3><b class="dg">Diagnosa:</b><p>Kemungkinan ISPA ringan<br>Suhu: 38.5°C • Gejala: Demam, Batuk, Pilek</p></div>
+    <div class="hc"><div class="t"><time>1 nov 2026</time><span style="background:#4be24b;color:#0b3d12">Aman</span></div><h3>Rayyan Malik</h3><b class="dg">Diagnosa:</b><p>Alergi Ringan / Iritasi Kulit<br>Suhu: 36.8°C • Gejala: Ruam Ringan</p></div>
+  </section>
+
+  <!-- 7 EDUCATION -->
+  <section class="screen pb lato" id="edu">
+    <div class="hd"><button class="back" data-go="home" aria-label="Kembali" data-i="chev-left"></button><b>Edukasi dan Faskes</b></div>
+    <label class="srch"><span data-i="search"></span><input type="search" placeholder="Cari Klinik,Rumah Sakit Atau Artikel" id="q"></label>
+    <div class="fc">
+      <div class="t"><b>Fasilitas Kesehatan Terdekat</b><button>Lihat Peta</button></div>
+      <div class="map"><button>RSUD BUKITINGGI 5 KM</button></div>
+    </div>
+    <div class="eh">Artikel Edukasi Kesehatan Anak</div>
+    <div id="arts">
+      <button class="art" data-k="demam pertolongan panduan"><div class="im" style="background:linear-gradient(135deg,#bfe3a8,#f6c98b)">👩‍🍼</div><div><em style="color:#036c23">PANDUAN IBU</em><b>Pertolongan Pertama Saat Anak Demam Tinggi</b><small>3 Menit yang lalu,Dr.Muhammad Yusuf,Sp.A</small></div></button>
+      <button class="art" data-k="dehidrasi nutrisi"><div class="im" style="background:linear-gradient(135deg,#f9d9a0,#a9dc9a)">🥕🥦</div><div><em style="color:#0c28dc">NUTRISI</em><b>Mengenali Tanda-tanda Dehidrasi Pada Wanita</b><small>1 jam yang lalu,Dr.Deviskhan,Sp.A</small></div></button>
+    </div>
+  </section>
+
+  <nav id="nav" aria-label="Navigasi utama">
+    <button data-tab="home" data-i2="home">Beranda</button>
+    <button data-tab="input" data-i2="steth">Cek Gejala</button>
+    <button data-tab="history" data-i2="history">Riwayat</button>
+    <button data-tab="edu" data-i2="book">Edukasi</button>
+  </nav>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
